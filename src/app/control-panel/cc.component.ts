@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import * as ccData from '../../ccData.json'
+import * as ccData from '../../../cc.data.json'
+import * as ccIpData from '../../../ccip.data.json'
 /**
  * @title Table with expandable rows
  */
