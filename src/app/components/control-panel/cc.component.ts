@@ -1,10 +1,7 @@
-import {Component} from '@angular/core';
+import { OrganisationService } from './../../../mock/organisation.service';
+import {Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import * as ccData from '../../../cc.data.json'
-import * as ccIpData from '../../../ccip.data.json'
-/**
- * @title Table with expandable rows
- */
+
 @Component({
   selector: 'app-cc',
   styleUrls: ['cc.component.scss'],
@@ -17,10 +14,18 @@ import * as ccIpData from '../../../ccip.data.json'
     ]),
   ],
 })
-export class CcComponent {
+export class CcComponent implements OnInit {
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
   expandedElement: PeriodicElement | null;
+  
+  constructor(private orgService: OrganisationService){
+      
+  }
+
+  ngOnInit(){
+    this.orgService.getOrganisations().subscribe(res => console.log(res.data))
+  }
 }
 
 export interface PeriodicElement {

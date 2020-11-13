@@ -1,4 +1,4 @@
-{
+export default {
   "result": "success",
   "count": 8,
   "data": [
